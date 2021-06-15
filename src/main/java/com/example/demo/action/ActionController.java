@@ -16,7 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins ="http://localhost:3000")
+//@CrossOrigin(origins ="http://localhost:3000")
+@CrossOrigin(origins = "https://studentreact1.herokuapp.com")
 @RestController
 public class ActionController {
     @Autowired
