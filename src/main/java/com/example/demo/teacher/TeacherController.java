@@ -51,7 +51,6 @@ public class TeacherController {
         teacherService.deleteTeacher(teacherId);
 
     }
-
     @PutMapping(path = "/updateTeacher/{teacherId}")
     public ResponseEntity<Teacher> updateStudent(
             @PathVariable Long teacherId, @RequestBody Teacher teacherInfo) {
@@ -64,7 +63,6 @@ public class TeacherController {
         Teacher updatedTeacher = teacherRepository.save(teacher);
         return ResponseEntity.ok(updatedTeacher);
     }
-
     @PutMapping(path = "/addTeacherById/{teacherId}")
     public ResponseEntity<Teacher> addPostById(
             @PathVariable Long teacherId, @RequestBody Post postInfo) {
