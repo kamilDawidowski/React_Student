@@ -14,22 +14,16 @@ import java.util.List;
 @RequestMapping(path = "post")
 public class PostController {
 
-
     private final PostService postService;
-
-
 
     @Autowired
     public PostController(PostService postService) {
         this.postService = postService;
     }
 
-
     @GetMapping
     public List<Post> getPosts() {
-
         return postService.getPosts();
-
     }
     @DeleteMapping(path = "deletPost/{postId}")
     public void deletePost(@PathVariable("postId") Long postId) {

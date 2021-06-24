@@ -18,11 +18,10 @@ public interface TeacherRepository extends CrudRepository<Teacher, Long> {
     //    @Query ("SELECT new com.example.demo.action.dto.ActionResponse( t.name , s.name) FROM Teacher t JOIN t.studentList s");
 //    public List<ActionResponse> getAllMembersInformation();
     @Query("SELECT new com.example.demo.action.dto.ActionResponse(t.name , s.name ) FROM Teacher t JOIN t.studentList s ")
-    public List<ActionResponse> getAllMembersInformation();
+    List<ActionResponse> getAllMembersInformation();
 
     @Query("SELECT new com.example.demo.action.dto.PostResponse(t.name , s.post,s.createData,s.id ) FROM Teacher t JOIN t.postList s ")
-    public List<PostResponse> getAllPostInformation();
-
+    List<PostResponse> getAllPostInformation();
 
     Optional<Teacher> findTeacherByEmail(String email);
 

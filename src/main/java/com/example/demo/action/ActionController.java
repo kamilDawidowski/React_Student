@@ -22,9 +22,6 @@ import java.util.List;
 public class ActionController {
     @Autowired
     private TeacherRepository teacherRepository;
-
-
-
     @PostMapping("/addStudentsToClass")
     public Teacher addStudentToClass(@RequestBody ActionRequest actionRequest) {
         return teacherRepository.save(actionRequest.getTeacher());
@@ -33,17 +30,12 @@ public class ActionController {
     public List<Teacher> findAllClass() {
         return (List<Teacher>) teacherRepository.findAll();
     }
-
     @GetMapping("/findAllMembers")
     public List<ActionResponse> getAllMembersInformation() {
         return teacherRepository.getAllMembersInformation();
     }
-
     @GetMapping("/postList")
     public List<PostResponse> getAllPostInformation() { return teacherRepository.getAllPostInformation(); }
-
-
-
 
 
 }

@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class ActionResponse {
     private String teacherName;
     private String studentName;
-
 }
