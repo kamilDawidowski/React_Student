@@ -12,9 +12,9 @@ import java.time.LocalDate;
 
 
 public class PostResponse {
+    private String name;
     private String post;
     private LocalDate data;
     private Long postId;
-
-
 }
+

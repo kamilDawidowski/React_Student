@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "https://studentreact1.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "https://studentreact1.herokuapp.com")
 @RestController
 @RequestMapping(path = "teacher")
 public class TeacherController {
@@ -26,30 +26,23 @@ public class TeacherController {
         this.teacherService = teacherService;
         this.teacherRepository = teacherRepository;
     }
-
     @GetMapping("/getTeachers")
     public ResponseEntity<List<Teacher>> getTeacher() {
 
         return new ResponseEntity<>(teacherService.getTeachers(), HttpStatus.OK);
 
     }
-
-
     @GetMapping("/getTeacherId/{id}")
     public ResponseEntity<Teacher> getTeacherById(@PathVariable Long id) {
         Teacher teacher = teacherRepository.findById(id).orElseThrow(() -> new ExpressionException("Nie ma takiego nauczyciela"));
         return ResponseEntity.ok(teacher);
 
-
     }
-
 
     @PostMapping("/newTeacher")
     public ResponseEntity registerNewTeacher(@RequestBody Teacher teacher) {
-
         teacherService.addNewTeacher(teacher);
         return new ResponseEntity(HttpStatus.CREATED);
-
     }
 
     @DeleteMapping(path = "deletTeacher/{teacherId}")
@@ -65,14 +58,12 @@ public class TeacherController {
         Teacher teacher = teacherRepository.findById(teacherId)
                 .orElseThrow(() -> new IllegalStateException("Nie ma studenta"));
 
-
         teacher.setName((teacherInfo.getName()));
         teacher.setEmail((teacherInfo.getEmail()));
 
         Teacher updatedTeacher = teacherRepository.save(teacher);
         return ResponseEntity.ok(updatedTeacher);
     }
-
 
     @PutMapping(path = "/addTeacherById/{teacherId}")
     public ResponseEntity<Teacher> addPostById(

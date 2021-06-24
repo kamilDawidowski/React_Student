@@ -15,8 +15,8 @@ public interface PostRepository extends CrudRepository<Post, Long> {
 
 //    @Query("SELECT new com.example.demo.action.dto.PostResponse(t.name , p.post, p.createData) FROM Teacher t JOIN t.postList p")
 //    public List<PostResponse> getAllPost();
-
-    @Query("SELECT new com.example.demo.action.dto.PostResponse(p.post, p.createData, p.id) FROM Post p")
-    public List<PostResponse> getAllPost();
+//
+//    @Query("SELECT new com.example.demo.action.dto.PostResponse(p.post, p.createData, p.id) FROM Post p")
+//    public List<PostResponse> getAllPost();
 
 }

@@ -16,27 +16,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//@CrossOrigin(origins ="http://localhost:3000")
-@CrossOrigin(origins = "https://studentreact1.herokuapp.com")
+@CrossOrigin(origins ="http://localhost:3000")
+//@CrossOrigin(origins = "https://studentreact1.herokuapp.com")
 @RestController
 public class ActionController {
     @Autowired
-    private StudentRepository studentRepository;
-    @Autowired
     private TeacherRepository teacherRepository;
-    @Autowired
-    private PostService postService;
-    @Autowired
-    private PostRepository postRepository;
-    @Autowired
-    private TeacherService teacherService;
+
 
 
     @PostMapping("/addStudentsToClass")
     public Teacher addStudentToClass(@RequestBody ActionRequest actionRequest) {
         return teacherRepository.save(actionRequest.getTeacher());
     }
-
     @GetMapping("/findAllTeachers")
     public List<Teacher> findAllClass() {
         return (List<Teacher>) teacherRepository.findAll();
@@ -48,7 +40,7 @@ public class ActionController {
     }
 
     @GetMapping("/postList")
-    public List<PostResponse> getAllPost() { return postRepository.getAllPost(); }
+    public List<PostResponse> getAllPostInformation() { return teacherRepository.getAllPostInformation(); }
 
 
 
