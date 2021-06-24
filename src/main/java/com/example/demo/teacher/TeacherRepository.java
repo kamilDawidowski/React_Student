@@ -2,11 +2,10 @@ package com.example.demo.teacher;
 
 import com.example.demo.action.dto.ActionResponse;
 import com.example.demo.action.dto.PostResponse;
-import com.example.demo.student.Student;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-//import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
 import java.util.Optional;
